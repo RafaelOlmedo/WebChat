@@ -1,0 +1,97 @@
+body {
+	font-family: Arial;
+	background-color: #83FDFF;
+
+}
+
+.container {
+	text-align: center;
+}
+
+#components {
+	width: 350px;
+	display: inline-block;
+	
+
+}
+.control{
+	width: 100%;
+	border: 1px solid #21ade7;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+button[name="btnEnter"]{
+	background-color: #21ade7;
+    cursor: pointer;
+    color: white;
+}
+
+/* Chat.html */
+
+.container{
+	/*text-align: center;*/
+	width: 360px;
+	margin: 0 auto;
+    padding: 15px;
+}
+
+#webchat{
+	/*padding: -5px;*/
+	/*border: dotted red;*/
+}
+
+#connected_users h5{
+	margin-top: 0px;
+}
+
+hr{
+	background-color: #2f9ac6;
+	width: 80%;
+	display: block;
+	font-weight: bold;
+	height: 1px;
+	border: 0px;	
+}
+
+.footer{
+    position: fixed;
+	
+
+    left: 0px;
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+    background: #F0F0F0;	
+}
+
+/* PQ não funcionou?*/
+
+/*.components{
+	height: 200px;
+}*/
+
+#message{
+	height: 30px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	border: 1px solid #21ADE7;	
+	border-radius: 10px;
+	width: 300px;
+	padding-left: 5px;
+	outline: none; /* remove a parte de fora da borda */
+
+	/*width: 100%;*/
+}
+
+#submit{
+	height: 30px;
+	width: 30px;
+	margin-top: 10px;	
+	background-color: #21ADE7;
+	border: 1px solid #21ADE7;
+	color: white;
+	border-radius: 10px;
+
+}
