@@ -22,14 +22,16 @@
 		<main class="container">
 		
 			<div id="components">
-				<input type="text" name="user" class="control" placeholder="Qual é o seu nome?">
+				<input type="text" id="user" name="user" class="control" placeholder="Qual é o seu nome?" required="true">
 				<br/>				
-				<button type="submit" name="btnEnter" class="control" onclick="location.href='chat.html'">ENVIAR</button>
+				<!-- <button type="submit" name="btnEnter" class="control" onclick="location.href='chat.html'">ENVIAR</button> -->
+				<button type="submit" name="btnEnter" class="control" onclick="open_chat_page()">ENVIAR</button>
+
 				
 				<br/>
 				<button type="button" name="btnDesconect" class="control" onclick="faz_algo(rafael)">DESCONECTAR USUÁRIOS</button>
 				<br/>
-				<button type="button" name="btnClear" class="control" onclick="exibe_users()">LIMPAR MENSAGENS</button>
+				<button type="button" name="btnClear" class="control" onclick="show_users()">LIMPAR MENSAGENS</button>
 
 
 			</div>
