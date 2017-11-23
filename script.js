@@ -8,11 +8,53 @@ function getConnectingUser() {
 	// Check browser support
 	if (typeof(Storage) !== "undefined") {
 
-		// Armazena o usuário em uma WebStorage.
-	    localStorage.setItem("user", document.getElementById("user").value);
+		// usuário informado no input.
+		var user = document.getElementById("user").value;
 
-	    // Alert apenas de teste.
-	    alert(localStorage.getItem("user"));
+		// Validar se usuário foi preenchido.
+
+		if (user == "") {
+			alert('Coloca informação ae palhaço!!')
+		}
+		else {
+
+			// Valida se usuário já está conectado.
+			alert('http://www.angelito.com.br/webchat/messages?nickname=' + user);
+			var xhttp = new XMLHttpRequest();
+
+			xhttp.onreadystatechange = function() {
+			// 4 DONE | 200 OK
+			if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+
+		    	if (this.responseText == "Usuário desconectado!") {
+		    		return false;
+		    	}
+		    	else {
+		    		return true;
+		    	}
+
+		    }}
+			xhttp.open("GET", "http://www.angelito.com.br/webchat/messages?nickname=" + user);
+			xhttp.send();
+
+
+
+			// if (valid_if_conneted_user(user) == true) {
+			// 	// Armazena o usuário em uma WebStorage.
+		 //    	localStorage.setItem("user", document.getElementById("user").value);
+
+		 //   		// Alert apenas de teste.
+		 //    	alert(localStorage.getItem("user"));
+			// }
+			// else{
+			// 	alert('Sai daqui!');
+			// }
+
+
+
+			
+		}
+		
 	} 
 	else {
 	    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
@@ -27,7 +69,7 @@ function open_chat_page() {
 	window.location.href = 'chat.html';
 
 	 // Alert apenas de teste.
-	 document.getElementById("connected_user").innerHTML = "Rafael";
+	 //document.getElementById("connected_user").innerHTML = "Rafael";
 }
 
 
@@ -47,7 +89,26 @@ function show_users() {
 
 	    }}
 	xhttp.open("GET", "http://www.angelito.com.br/webchat/users");
-	xhttp.send();
+	xhttp.send();	
+}
 
-	
+function valid_if_conneted_user(user) {
+		
+	alert('http://www.angelito.com.br/webchat/messages?nickname=' + user);
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.onreadystatechange = function() {
+	// 4 DONE | 200 OK
+	if (this.readyState == 4 && this.status == 200) {
+
+    	if (this.responseText == "Usuário desconectado!") {
+    		return false;
+    	}
+    	else {
+    		return true;
+    	}
+
+    }}
+	xhttp.open("GET", "http://www.angelito.com.br/webchat/messages?nickname=" + user);
+	xhttp.send();
 }
