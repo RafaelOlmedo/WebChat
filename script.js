@@ -18,8 +18,7 @@ function getConnectingUser() {
 		}
 		else {
 
-			// Valida se usuário já está conectado.
-			alert('http://www.angelito.com.br/webchat/messages?nickname=' + user);
+			// Valida se usuário já está conectado.			
 			var xhttp = new XMLHttpRequest();
 
 			xhttp.onreadystatechange = function() {
@@ -30,7 +29,11 @@ function getConnectingUser() {
 		    		return false;
 		    	}
 		    	else {
-		    		return true;
+		    		
+		    		// Armazena no WebStorage o usuário informado.
+		    		localStorage.setItem("user", document.getElementById("user").value);
+
+		    		window.location.href = 'chat.html';
 		    	}
 
 		    }}
@@ -66,7 +69,7 @@ function open_chat_page() {
 
 	getConnectingUser();
 
-	window.location.href = 'chat.html';
+	// window.location.href = 'chat.html';
 
 	 // Alert apenas de teste.
 	 //document.getElementById("connected_user").innerHTML = "Rafael";
