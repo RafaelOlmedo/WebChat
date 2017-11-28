@@ -115,3 +115,45 @@ function valid_if_conneted_user(user) {
 	xhttp.open("GET", "http://www.angelito.com.br/webchat/messages?nickname=" + user);
 	xhttp.send();
 }
+
+function deleteAllUsers() {
+
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.onreadystatechange = function() {
+	// 4 DONE | 200 OK
+	if (this.readyState == 4 && this.status == 200) {
+
+    	if (this.responseText == "Usuários desconectados!") {
+    		alert("Todos os usuários foram desconectados!")
+    	}
+    	else {
+    		alert("Ocorreu um erro ao desconectar os usuários.")
+    		
+    	}
+
+    }}
+	xhttp.open("GET", "http://www.angelito.com.br/webchat/reset_users");
+	xhttp.send();
+}
+
+function deleteAllMessages() {
+
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.onreadystatechange = function() {
+	// 4 DONE | 200 OK
+	if (this.readyState == 4 && this.status == 200) {
+
+    	if (this.responseText == "Mensagens excluídas!") {
+    		alert("Todas as mensagens foram excluídas!")
+    	}
+    	else {
+    		alert("Ocorreu um erro ao excluir todas as mensagens.")
+    		
+    	}
+
+    }}
+	xhttp.open("GET", "http://www.angelito.com.br/webchat/reset_messages");
+	xhttp.send();
+}

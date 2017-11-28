@@ -8,7 +8,7 @@
 	<script src="script.js" type="text/javascript"></script>
 
 </head>
-<body>
+<body onload="loadPage()">
 
 	<div id="container" class="container">
 		<header>
@@ -22,16 +22,15 @@
 			</div>
 			<!-- div connected users -->
 
-			<div id="messages" class="header">
-				
-			</div>
-			<!-- div messages / Dentro dela irá mais um div para cada mensagem.-->
-		
-
 			<hr>
 
 			<label id="all_users"></label>
 
+			<div id="messages" class="header">
+				
+
+			</div>
+			<!-- div messages / Dentro dela irá mais um div para cada mensagem.-->
 
 		</div>
 		<!-- div header -->
@@ -44,8 +43,8 @@
 
 		<footer class="footer">
 			<div class="components">
-				<input type="text" name="message" id="message" placeholder="digite sua mensagem...">
-				<button type="submit" name="submit" id="submit">ok</button>
+				<input type="text" name="input_message" id="input_message" placeholder="digite sua mensagem...">
+				<button type="submit" name="submit" id="submit" onclick="saveMessage()">ok</button>
 			</div>
 			
 

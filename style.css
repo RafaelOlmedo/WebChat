@@ -72,7 +72,7 @@ hr{
 	height: 200px;
 }*/
 
-#message{
+#input_message{
 	height: 30px;
 	box-sizing: border-box;
 	margin-top: 10px;
@@ -97,5 +97,29 @@ hr{
 }
 
 #all_users{
-	font-size: small;
+	font-size: 65%;
+}
+
+#message{
+	background-color: lightblue;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	outline: none; /* remove a parte de fora da borda */
+	/*border: 1px solid red;*/
+	border-radius: 5px;
+}
+
+#span_user{
+	font-size: 80%;
+	font-style: italic;
+	font-weight: bold;
+}
+
+#span_message{
+	font-size: 90%;
+}
+
+#messages{
+	text-align: left;
+	margin-bottom: 45px;	
 }
