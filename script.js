@@ -157,3 +157,28 @@ function deleteAllMessages() {
 	xhttp.open("GET", "http://www.angelito.com.br/webchat/reset_messages");
 	xhttp.send();
 }
+
+function createUser(){
+
+	var xhttp = new XMLHttpRequest();
+
+	var user = document.getElementById("user").value;
+
+	xhttp.onreadystatechange = function() {
+	// 4 DONE | 200 OK
+	if (this.readyState == 4 && this.status == 200) {
+
+    	if (this.responseText == "OK") {
+    		alert("Usuário cadastrado com sucesso!");
+
+    		document.getElementById("user").value = "";
+    	}
+    	else {
+    		alert("Usuário já cadastro. Realize o cadastro com outro usuário, ou realize o login com o usuário informado.");
+    		
+    	}
+
+    }}
+	xhttp.open("POST", "http://www.angelito.com.br/webchat/user?nickname=" + user);
+	xhttp.send();
+}

@@ -106,7 +106,7 @@ hr{
 	box-sizing: border-box;
 	outline: none; /* remove a parte de fora da borda */
 	/*border: 1px solid red;*/
-	border-radius: 5px;
+	border-radius: 5px;	
 }
 
 #span_user{
@@ -120,6 +120,13 @@ hr{
 }
 
 #messages{
-	text-align: left;
 	margin-bottom: 45px;	
+}
+
+.left{
+	text-align: left;
+}
+
+.right{
+	text-align: right;
 }

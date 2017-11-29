@@ -81,11 +81,25 @@ function getMessages() {
 		// Limpa para não repetir as mensagems.
 		mainDiv.innerHTML = "";
 
+		var messageUser;
+
 		for (var i = 0; i < messagesJSON.length; i++) {
 			// Cria div que irá receber uma mensagem.
 			var divMessage = document.createElement("div"); 
 
 			divMessage.id = "message";
+
+			// Valida se o usuário logado é igual ao registro da mensagem retornada.
+			if (user == messagesJSON[i].user) {
+				divMessage.className = "right";
+
+				messageUser = "você";
+			}
+			else {
+				divMessage.className = "left";	
+
+				messageUser = messagesJSON[i].user;			
+			}
 
 			// span do usuário / data.
 			var spanUser = document.createElement("span");
@@ -98,7 +112,7 @@ function getMessages() {
 			spanMessage.id = "span_message";			
 
 			// SPAN - DATA + USER.
-			spanUser.innerHTML = "[" +  messagesJSON[i].datetime + "] " + messagesJSON[i].user + " diz: <br>";
+			spanUser.innerHTML = "[" +  messagesJSON[i].datetime + "] " + messageUser + " diz: <br>";
 
 			// SPAN - MESSAGE.
 			spanMessage.innerHTML = messagesJSON[i].textmsg;
